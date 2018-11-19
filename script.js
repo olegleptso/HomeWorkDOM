@@ -1,5 +1,9 @@
 const parent = document.querySelector("#insertHere");
 
+const button = document.querySelector("#pressMe");
+
+button.addEventListener("click", createDivs);
+
 function createDivs() {
     for (let i = 0; i<20; i++){
         let  color = getRandomColor();
