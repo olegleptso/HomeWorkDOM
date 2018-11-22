@@ -5,17 +5,22 @@ const button = document.querySelector("#pressMe");
 button.addEventListener("click", createDivs);
 
 function createDivs() {
+    parent.innerHTML="";
     for (let i = 0; i<20; i++){
-        let  color = getRandomColor();
-        let number = i.toString();
-        let text = document.createElement("p");
-        var divs = document.createElement("div");
-        divs.className = "blockStyle";
-        divs.style.backgroundColor=color;
-        text.innerText =  number;
-        parent.append(divs);
-        divs.append(text);
+        let div = getDiv(i+1);
+        parent.append(div);
     }
+}
+
+function getDiv(number){
+    let  color = getRandomColor();
+    let text = document.createElement("p");
+    var div = document.createElement("div");
+    div.className = "blockStyle";
+    div.style.backgroundColor=color;
+    text.innerText = number;
+    div.append(text);
+    return div;
 }
 
 function getRandomColor() {
